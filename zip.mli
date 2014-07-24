@@ -57,6 +57,10 @@ type in_file
 val open_in: string -> in_file
           (** Open the ZIP file with the given filename.  Return a
               handle opened for reading from this file. *)
+val open_in_channel : string -> in_channel -> in_file
+          (** Open the ZIP file with the given input channel.  Return
+              a handle opened for reading from this file. The first
+              argument is used for error reporting. *)
 val entries: in_file -> entry list
           (** Return a list of all entries in the given ZIP file. *)
 val comment: in_file -> string
